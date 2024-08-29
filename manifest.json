@@ -1,0 +1,61 @@
+{
+  "manifest_version": 3,
+  "name": "GitHub Repo Analyzer",
+  "version": "1.0",
+  "offline_enabled": true,
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {}
+  },
+  "permissions": [
+    "scripting",
+    "activeTab",
+    "storage"
+  ],
+  "host_permissions": [
+    "https://api.github.com/",
+    "https://codetabs.com/"
+  ],
+  "commands": {
+    "open-cx": {
+      "suggested_key": {
+        "default": "Ctrl+Shift+X",
+        "mac": "Command+Shift+X"
+      },
+      "description": "Open command menu"
+    },
+    "get-xpath": {
+      "suggested_key": {
+        "default": "Ctrl+Shift+E",
+        "mac": "Command+Shift+E"
+      },
+      "description": "Get XPath of selected element"
+    }
+  },
+  "background": {
+    "service_worker": "service_worker.js"
+  },
+  "web_accessible_resources": [
+    {
+      "resources": [
+        "sidebar.html",
+        "sidebar.css",
+        "sidebar.js"
+      ],
+      "matches": [
+        "<all_urls>"
+      ]
+    }
+  ],
+  "content_scripts": [
+    {
+      "matches": [
+        "<all_urls>"
+      ],
+      "js": [
+        "content.js"
+      ],
+      "run_at": "document_end"
+    }
+  ]
+}

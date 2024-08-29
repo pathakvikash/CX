@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>GitHub Repo Analyzer</title>
+    <link rel="stylesheet" href="popup.css">
+</head>
+
+<body>
+    <h1 class="">GitHub Repo Analyzer</h1>
+    <div id="current-time"></div>
+    <input type="text" id="repo-url" placeholder="Enter GitHub Repo URL">
+    <button id="analyze">Analyze</button>
+    <button id="generate-tasks">Generate Tasks</button>
+    <div id="results"></div>
+    <div id="todo-container">
+        <h2 id="todo-header">Todo List</h2>
+        <div id="todo-content" style="display: none;">
+            <input type="text" id="todo-input" placeholder="Enter a new todo">
+            <input type="date" id="due-date" placeholder="Select due date">
+            <select id="priority-select">
+                <option value="" disabled selected>Select priority</option>
+                <option value="low">Low</option>
+                <option value="medium">Medium</option>
+                <option value="high">High</option>
+            </select>
+            <input type="text" id="category-input" placeholder="Enter category (optional)">
+            <button id="add-todo">Add Todo</button>
+            <ul id="todo-list"></ul>
+        </div>
+    </div>
+    <button id="toggle-links">Toggle Links</button>
+    <ul id="links-container" style="display: none;"></ul>
+    <button id="toggle-theme">Toggle Theme</button>
+    <button id="export-todos">Export Todos</button>
+    <input type="file" id="import-todos" />
+    <h2 id="chat-header">Chat</h2>
+    <div id="chat-content" style="display: none;">
+        <div id="messages" class="messages"></div>
+        <div class="input-area">
+            <input type="text" id="user-input" placeholder="Type your message..." />
+            <button id="send-button">Send</button>
+        </div>
+    </div>
+    <script src="popup.js" type="module"></script>
+</body>
+
+</html>
